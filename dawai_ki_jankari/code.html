@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html class="light" lang="hi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e89c30",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#211a11",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<title>Dawai ki Jankari - Medicine Detail</title>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#181511] dark:text-[#f8f7f6] antialiased overflow-y-auto">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden max-w-[480px] mx-auto bg-white dark:bg-[#1a150e] shadow-xl overflow-y-auto">
+<!-- TopAppBar -->
+<div class="flex items-center bg-white dark:bg-[#1a150e] p-4 pb-2 justify-between sticky top-0 z-10">
+<div onclick="window.location.href='../meri_dawaiyan/code.html'" class="text-[#181511] dark:text-white flex size-12 shrink-0 items-center justify-start cursor-pointer">
+<span class="material-symbols-outlined text-3xl">arrow_back_ios</span>
+</div>
+<h2 class="text-[#181511] dark:text-white text-xl font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Medicine Information</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 bg-transparent text-[#181511] dark:text-white gap-2 text-base font-bold leading-normal min-w-0 p-0">
+<span class="material-symbols-outlined text-2xl">info</span>
+</button>
+</div>
+</div>
+<!-- Progress Indicator -->
+<div class="px-4 py-2">
+<div class="flex justify-between items-center mb-1">
+<span class="text-sm font-medium text-[#887863] dark:text-[#c4b5a2]">Today's progress</span>
+<span class="text-sm font-bold text-primary">8 of 10</span>
+</div>
+<div class="w-full bg-[#f4f3f0] dark:bg-[#32291e] h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[80%] rounded-full"></div>
+</div>
+</div>
+<!-- Medicine Visuals -->
+<div class="flex w-full grow @container py-4">
+<div class="w-full px-4">
+<div class="w-full gap-2 overflow-hidden bg-[#fcfaf7] dark:bg-[#2d2419] aspect-[4/3] flex rounded-xl border border-[#edeae4] dark:border-[#3d3224]">
+<div class="w-full bg-center bg-no-repeat bg-contain aspect-auto flex-1 p-6" data-alt="A round white aspirin pill next to its medicine box" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAmO8XKv3vFNmNKEbcygRZDlg7yCAsE4LNJqpWbUkyj6OfTaGG6hZiSj1idjGRg9xpyAn9LPBoXkGxWHLBdDe7JpdLsB8H0FgXuLEBqoWuUJsqsNozKQnLIwT9TaQplxyNueGzrRNUkVHy6XkQ4tZvuc7XJZ_Xp8rT--pSHawKxKUkQoaVJvT_cnLO9vhBkkTC8sW-LGOIxIHgWwba7jR-djDupuIjteWIdl22zAiH_BFNyAFsFOf0LNOjWnbiKeu0OO6BgiS0qAR1L");'>
+</div>
+</div>
+</div>
+</div>
+<!-- Headline & Basic Info -->
+<div class="px-4">
+<h1 class="text-[#181511] dark:text-white tracking-tight text-3xl font-bold leading-tight pt-4">Aspirin 75mg</h1>
+<div class="flex items-center gap-2 mt-2">
+<span class="material-symbols-outlined text-primary text-xl">wb_sunny</span>
+<p class="text-[#181511] dark:text-[#f8f7f6] text-lg font-medium">1 Tablet | Once a day</p>
+</div>
+<p class="text-[#887863] dark:text-[#c4b5a2] text-base mt-1">After food</p>
+</div>
+<!-- Savan's Caring Message -->
+<div class="flex items-start gap-3 p-4 mt-4 bg-primary/10 dark:bg-primary/5 mx-4 rounded-xl border border-primary/20">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full w-14 shrink-0 border-2 border-primary shadow-sm" data-alt="Friendly male digital companion avatar named Savan" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDBW8fIGkQ4clGGmto_AD8fFbj_wRtwHG6do00BopcX3V-wGAxXzJ8kg4nsVAWJ2-HoQNFjoqF6pcDESR4S6A7ea-U8Ug03BuMYMXpmaCMxKbq73cSet5DD_yj-8OKDZqZ7UBkoTFf629QHiRF9_XLN_V4yO81nt15a0Al8FQqqWr0lr-kwxFY3nAqIpPW0Jv4XgjS1Ylw6Vd3ayVaEoOyefcLqfZ9QVgRoXNXSVtPiDFP_HVFjEaT90o6y2erEKwxtET285QYsnQQE");'>
+</div>
+<div class="flex flex-1 flex-col gap-1 items-start">
+<p class="text-primary text-sm font-bold leading-normal uppercase tracking-wider">Savan</p>
+<div class="relative">
+<p class="text-xl font-medium leading-snug text-[#181511] dark:text-white italic">
+                        "This is good for your heart."
+                    </p>
+</div>
+</div>
+</div>
+<!-- Secondary Info -->
+<div class="p-4 flex flex-col gap-4">
+<div class="flex items-center gap-4 p-4 rounded-xl bg-[#f4f3f0] dark:bg-[#2d2419]">
+<div class="size-10 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">favorite</span>
+</div>
+<div class="flex-1">
+<h4 class="font-bold text-[#181511] dark:text-white">What is it for?</h4>
+<p class="text-[#887863] dark:text-[#c4b5a2]">To protect the heart and control blood pressure.</p>
+</div>
+</div>
+</div>
+<!-- CTA Action Section -->
+<div class="p-4 mt-auto mb-6">
+<button class="w-full bg-primary text-white text-xl font-bold py-5 rounded-xl shadow-lg shadow-primary/30 flex items-center justify-center gap-3 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-2xl">check_circle</span>
+                Took Medicine
+            </button>
+<p class="text-center text-[#887863] dark:text-[#c4b5a2] text-sm mt-4 font-medium">
+                Next dose: Tomorrow morning 9:00 AM
+            </p>
+</div>
+<div class="h-4 bg-white dark:bg-[#1a150e]"></div>
+</div>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white dark:bg-[#1c160e] border-t border-[#e5e1dc] dark:border-[#3d3429] z-50">
+<div class="max-w-md mx-auto flex justify-around items-center py-3 px-2">
+<a href="../aaj_ka_din/code.html" class="flex flex-col items-center justify-center w-16 h-16 text-[#887863] dark:text-[#a19281]">
+<span class="material-symbols-outlined text-2xl">home</span>
+<span class="text-xs font-medium mt-1">Home</span>
+</a>
+<a href="../meri_dawaiyan/code.html" class="flex flex-col items-center justify-center w-16 h-16 text-primary">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1">medication</span>
+<span class="text-xs font-medium mt-1">Medicine</span>
+</a>
+<a href="../aapki_pragati/code.html" class="flex flex-col items-center justify-center w-16 h-16 text-[#887863] dark:text-[#a19281]">
+<span class="material-symbols-outlined text-2xl">trending_up</span>
+<span class="text-xs font-medium mt-1">Progress</span>
+</a>
+<a href="../meri_diary/code.html" class="flex flex-col items-center justify-center w-16 h-16 text-[#887863] dark:text-[#a19281]">
+<span class="material-symbols-outlined text-2xl">book</span>
+<span class="text-xs font-medium mt-1">Diary</span>
+</a>
+</div>
+</nav>
+</body></html>

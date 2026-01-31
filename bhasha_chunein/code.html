@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DEKHBHAL - Bhasha Chunein</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e89c30",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#211a11",
+                        "sage-highlight": "#d1e8e2",
+                        "sage-dark": "#4a675f"
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>body {
+    font-family: "Lexend", sans-serif
+    }
+.radio-dot-custom:checked {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCbkPfNyNqBTsOQIILfzVk4v6f0U3DI2aE9DEO5IuCHDizIV61vzEMm11ILA__yUF7FKFegAgXWgzVUAqHLU7sgyfZoeAgU5xG8LDOtZG8ELu761WdkUGsbxmIGWp_Cae3McrEswhuzJolVUNzSBevRfEPSKM7QxwNCHhmZQPMZVg4oV6EMmZkN-DcS7JwEZ-l4l_OD6xPPbbF5wqmj28fL4A-VnEvvOACL8TNJPDQuZe9OK8pXkLSwpVv7YyJYADjkMZYMHHaLqzru)
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#181511] dark:text-[#f8f7f6] min-h-screen flex flex-col overflow-y-auto">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-4 py-4 flex items-center border-b border-[#e5e1dc] dark:border-[#3d3429]">
+<button onclick="window.location.href='../index.html'" class="p-2 -ml-2 cursor-pointer">
+<span class="material-symbols-outlined text-2xl">arrow_back_ios</span>
+</button>
+<h1 class="flex-1 text-center text-xl font-bold tracking-tight pr-8">Choose Language</h1>
+</header>
+<main class="flex-1 flex flex-col max-w-md mx-auto w-full px-4 pb-32">
+<!-- Logo/Icon Section -->
+<div class="flex justify-center pt-8 pb-4">
+<div class="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-4xl" style="font-variation-settings: 'FILL' 1">translate</span>
+</div>
+</div>
+<!-- Headline & Instructions -->
+<div class="text-center mb-8">
+<h2 class="text-[28px] font-bold leading-tight mb-2">Choose your language</h2>
+<p class="text-lg opacity-80">Select your preferred language</p>
+</div>
+<!-- Language Radio List -->
+<div class="flex flex-col gap-4">
+<!-- Selected State (Sage Green Highlight) -->
+<label class="flex items-center gap-4 rounded-xl border-2 border-sage-dark bg-sage-highlight dark:bg-sage-dark/30 p-5 cursor-pointer transition-colors shadow-sm">
+<div class="flex grow flex-col">
+<p class="text-xl font-bold text-sage-dark dark:text-sage-highlight">हिन्दी (Hindi)</p>
+<p class="text-base text-sage-dark/80 dark:text-sage-highlight/80">Hindi</p>
+</div>
+<input checked="" class="radio-dot-custom h-7 w-7 border-2 border-sage-dark bg-transparent text-transparent checked:border-sage-dark focus:outline-none focus:ring-0 focus:ring-offset-0" name="language" type="radio"/>
+</label>
+<label class="flex items-center gap-4 rounded-xl border border-[#e5e1dc] dark:border-[#3d3429] bg-white dark:bg-[#2d2419] p-5 cursor-pointer hover:border-primary transition-colors">
+<div class="flex grow flex-col">
+<p class="text-xl font-bold">English</p>
+<p class="text-base opacity-60">English</p>
+</div>
+<input class="radio-dot-custom h-7 w-7 border-2 border-[#e5e1dc] dark:border-[#3d3429] bg-transparent text-transparent checked:border-primary focus:outline-none focus:ring-0 focus:ring-offset-0" name="language" type="radio"/>
+</label>
+<label class="flex items-center gap-4 rounded-xl border border-[#e5e1dc] dark:border-[#3d3429] bg-white dark:bg-[#2d2419] p-5 cursor-pointer hover:border-primary transition-colors">
+<div class="flex grow flex-col">
+<p class="text-xl font-bold">मराठी (Marathi)</p>
+<p class="text-base opacity-60">Marathi</p>
+</div>
+<input class="radio-dot-custom h-7 w-7 border-2 border-[#e5e1dc] dark:border-[#3d3429] bg-transparent text-transparent checked:border-primary focus:outline-none focus:ring-0 focus:ring-offset-0" name="language" type="radio"/>
+</label>
+<label class="flex items-center gap-4 rounded-xl border border-[#e5e1dc] dark:border-[#3d3429] bg-white dark:bg-[#2d2419] p-5 cursor-pointer hover:border-primary transition-colors">
+<div class="flex grow flex-col">
+<p class="text-xl font-bold">தமிழ் (Tamil)</p>
+<p class="text-base opacity-60">Tamil</p>
+</div>
+<input class="radio-dot-custom h-7 w-7 border-2 border-[#e5e1dc] dark:border-[#3d3429] bg-transparent text-transparent checked:border-primary focus:outline-none focus:ring-0 focus:ring-offset-0" name="language" type="radio"/>
+</label>
+<label class="flex items-center gap-4 rounded-xl border border-[#e5e1dc] dark:border-[#3d3429] bg-white dark:bg-[#2d2419] p-5 cursor-pointer hover:border-primary transition-colors">
+<div class="flex grow flex-col">
+<p class="text-xl font-bold">తెలుగు (Telugu)</p>
+<p class="text-base opacity-60">Telugu</p>
+</div>
+<input class="radio-dot-custom h-7 w-7 border-2 border-[#e5e1dc] dark:border-[#3d3429] bg-transparent text-transparent checked:border-primary focus:outline-none focus:ring-0 focus:ring-offset-0" name="language" type="radio"/>
+</label>
+<label class="flex items-center gap-4 rounded-xl border border-[#e5e1dc] dark:border-[#3d3429] bg-white dark:bg-[#2d2419] p-5 cursor-pointer hover:border-primary transition-colors">
+<div class="flex grow flex-col">
+<p class="text-xl font-bold">বাংলা (Bengali)</p>
+<p class="text-base opacity-60">Bengali</p>
+</div>
+<input class="radio-dot-custom h-7 w-7 border-2 border-[#e5e1dc] dark:border-[#3d3429] bg-transparent text-transparent checked:border-primary focus:outline-none focus:ring-0 focus:ring-offset-0" name="language" type="radio"/>
+</label>
+</div>
+<!-- Subtle hint for more scroll -->
+<div class="flex justify-center py-6 opacity-30">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</main>
+<!-- Fixed Action Button at Bottom -->
+<div class="fixed bottom-0 left-0 right-0 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-lg border-t border-[#e5e1dc] dark:border-[#3d3429] px-6 py-8 flex flex-col items-center">
+<button onclick="window.location.href='../pehchaan_chunein/code.html'" class="w-full max-w-md h-16 bg-primary hover:bg-primary/90 text-[#181511] text-xl font-bold rounded-xl shadow-lg flex items-center justify-center gap-2 transition-transform active:scale-95 cursor-pointer">
+<span>Continue</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<p class="mt-4 text-sm opacity-50 font-medium">Step 1 of 10</p>
+</div>
+<!-- Background Decorative Elements -->
+<div class="fixed -bottom-24 -left-24 w-64 h-64 bg-primary/5 rounded-full blur-3xl -z-10"></div>
+<div class="fixed -top-24 -right-24 w-64 h-64 bg-sage-highlight/20 dark:bg-sage-dark/10 rounded-full blur-3xl -z-10"></div>
+</body></html>

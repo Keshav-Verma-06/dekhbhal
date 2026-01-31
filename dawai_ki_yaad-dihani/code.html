@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html class="light" lang="hi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e89c30",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#211a11",
+                        "sage-green": "#86a687",
+                        "soft-saffron": "#e89c30",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .ios-blur {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#181511] antialiased">
+<div class="relative flex h-screen w-full flex-col overflow-hidden">
+<!-- Full Screen Background Image (Smiling Loved One) -->
+<div class="absolute inset-0 z-0">
+<div class="h-full w-full bg-cover bg-center" data-alt="A smiling adult daughter looking warmly at camera" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuACyzvq2BXuGbgKeC18fDbeG9BO1-Cqg2Z8t-jSMel-62nN_51vjx01U1qb9aOLwY-MsZOHZCzIEo8DsWJ0ax-BF08FSKXJ3zPF7NoDhdp3SIv_0ukHoNAcRkb6d813HHjuk9c5gr7r8R35BEgg5g4ZS6NAYV6Ha-ogva_gQHrnq-gROzEFqM8MCMlzFdSEa4ctWRFG7Ajnu1cWuKB4F5h1P6tCDvlY5Tab1kG59QrtYMNrZpu1PU1DHVwZOv0pJvwiWl-n5UxfqAFD");'>
+</div>
+<!-- Gradient Overlay for Legibility -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/60"></div>
+</div>
+<!-- Top Navigation / App Title Area -->
+<div class="relative z-10 flex items-center justify-between p-6">
+<div class="flex items-center gap-2 text-white/90">
+<span class="material-symbols-outlined">favorite</span>
+<span class="text-sm font-medium tracking-wide uppercase">Medicine Reminder</span>
+</div>
+<div class="bg-white/20 ios-blur rounded-full px-3 py-1 text-white text-xs font-medium">
+                DEKHBHAL
+            </div>
+</div>
+<!-- Reminder Content Area -->
+<div class="relative z-10 flex flex-1 flex-col items-center justify-center px-6 text-center">
+<!-- Icon/Caller Avatar Style -->
+<div class="mb-6 h-24 w-24 rounded-full border-4 border-primary/50 p-1">
+<div class="flex h-full w-full items-center justify-center rounded-full bg-primary text-white">
+<span class="material-symbols-outlined text-4xl">medical_services</span>
+</div>
+</div>
+<!-- Headline: Emotional Greeting -->
+<h2 class="text-white text-[32px] font-bold leading-tight tracking-tight drop-shadow-md">
+                Dad, it's time for your medicine.
+            </h2>
+<!-- Body Text: Specific Reminder -->
+<p class="mt-4 text-white/90 text-lg font-medium ios-blur bg-black/10 px-4 py-2 rounded-full">
+                Afternoon: Metformin 500mg
+            </p>
+</div>
+<!-- Action Buttons Footer -->
+<div class="relative z-10 flex flex-col gap-4 p-8 pb-12">
+<div class="flex flex-col gap-4 w-full max-w-md mx-auto">
+<!-- Positive Action: Taken -->
+<button class="flex h-20 w-full items-center justify-between rounded-xl bg-sage-green px-8 text-white shadow-lg active:scale-95 transition-transform">
+<div class="flex flex-col items-start">
+<span class="text-xl font-bold">Yes, I took it</span>
+<span class="text-sm opacity-90">Mark as taken</span>
+</div>
+<div class="flex h-12 w-12 items-center justify-center rounded-full bg-white/20">
+<span class="material-symbols-outlined text-3xl font-bold">check</span>
+</div>
+</button>
+<!-- Postpone Action: Not Now -->
+<button class="flex h-20 w-full items-center justify-between rounded-xl bg-soft-saffron px-8 text-white shadow-lg active:scale-95 transition-transform">
+<div class="flex flex-col items-start">
+<span class="text-xl font-bold">Not now</span>
+<span class="text-sm opacity-90">Remind me in 15 mins</span>
+</div>
+<div class="flex h-12 w-12 items-center justify-center rounded-full bg-white/20">
+<span class="material-symbols-outlined text-3xl font-bold">schedule</span>
+</div>
+</button>
+</div>
+<!-- Call Interaction Hint -->
+<div class="mt-6 flex flex-col items-center gap-2">
+<div class="h-1.5 w-12 rounded-full bg-white/30"></div>
+<p class="text-white/60 text-xs font-medium uppercase tracking-[0.2em]">Incoming Caring Reminder</p>
+</div>
+</div>
+</div>
+<script>
+function markAsTaken() {
+    alert('Medicine marked as taken!');
+    window.location.href = '../aaj_ka_din/code.html';
+}
+function remindLater() {
+    alert('You will be reminded in 15 minutes.');
+    window.location.href = '../aaj_ka_din/code.html';
+}
+document.querySelectorAll('button').forEach((btn, index) => {
+    if(index === 0) btn.onclick = markAsTaken;
+    if(index === 1) btn.onclick = remindLater;
+});
+</script>
+</body></html>

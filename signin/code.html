@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html class="light" lang="hi">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Sign In - Dekhbhal</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e89c30",
+                        "background-light": "#fdfaf5",
+                        "background-dark": "#211a11",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Lexend', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col transition-colors duration-300 overflow-y-auto">
+    <div class="relative flex h-full min-h-screen w-full flex-col group/design-root overflow-x-hidden max-w-[430px] mx-auto bg-background-light dark:bg-background-dark overflow-y-auto">
+        <!-- Top Navigation -->
+        <div class="flex items-center bg-transparent p-4 pb-2 justify-between">
+            <div onclick="window.location.href='../index.html'" aria-label="Back" class="text-[#181511] dark:text-white flex size-12 shrink-0 items-center justify-center cursor-pointer">
+                <span class="material-symbols-outlined">arrow_back_ios</span>
+            </div>
+            <h2 class="text-[#181511] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-12">Welcome Back</h2>
+        </div>
+
+        <!-- Form Container -->
+        <div class="flex-1 flex flex-col px-6 pt-8 pb-24">
+            <!-- Tabs -->
+            <div class="flex gap-2 mb-8 bg-white dark:bg-[#2d2419] rounded-xl p-1.5 shadow-sm">
+                <button id="loginTab" onclick="switchToLogin()" class="flex-1 py-3 px-4 rounded-lg text-base font-bold transition-all bg-primary text-[#181511]">
+                    Login
+                </button>
+                <button id="signupTab" onclick="switchToSignup()" class="flex-1 py-3 px-4 rounded-lg text-base font-bold transition-all text-[#887863] dark:text-[#a19281]">
+                    Sign Up
+                </button>
+            </div>
+
+            <!-- Login Form -->
+            <div id="loginForm" class="flex flex-col gap-6">
+                <div>
+                    <label class="text-[#181511] dark:text-white text-sm font-semibold mb-2 block">Phone Number / Email</label>
+                    <input type="text" id="loginUsername" placeholder="Enter your phone or email" class="w-full h-14 px-4 rounded-xl border-2 border-[#e5e1dc] dark:border-[#3d3429] bg-white dark:bg-[#2d2419] text-[#181511] dark:text-white text-base focus:border-primary focus:outline-none transition-colors" />
+                </div>
+
+                <div>
+                    <label class="text-[#181511] dark:text-white text-sm font-semibold mb-2 block">Password</label>
+                    <div class="relative">
+                        <input type="password" id="loginPassword" placeholder="Enter your password" class="w-full h-14 px-4 pr-12 rounded-xl border-2 border-[#e5e1dc] dark:border-[#3d3429] bg-white dark:bg-[#2d2419] text-[#181511] dark:text-white text-base focus:border-primary focus:outline-none transition-colors" />
+                        <button type="button" onclick="togglePassword('loginPassword')" class="absolute right-4 top-1/2 -translate-y-1/2 text-[#887863] dark:text-[#a19281]">
+                            <span class="material-symbols-outlined">visibility</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="flex justify-between items-center">
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" class="w-5 h-5 rounded border-2 border-[#e5e1dc] text-primary focus:ring-0 focus:ring-offset-0" />
+                        <span class="text-sm text-[#887863] dark:text-[#a19281]">Remember me</span>
+                    </label>
+                    <button class="text-sm text-primary font-semibold">Forgot Password?</button>
+                </div>
+
+                <button onclick="handleLogin()" class="w-full h-14 bg-primary hover:bg-primary/90 text-[#181511] text-lg font-bold rounded-xl shadow-lg active:scale-95 transition-transform mt-4">
+                    Login
+                </button>
+
+                <!-- Social Login -->
+                <div class="flex items-center gap-4 my-6">
+                    <div class="flex-1 h-px bg-[#e5e1dc] dark:bg-[#3d3429]"></div>
+                    <span class="text-sm text-[#887863] dark:text-[#a19281]">or continue with</span>
+                    <div class="flex-1 h-px bg-[#e5e1dc] dark:bg-[#3d3429]"></div>
+                </div>
+
+                <div class="flex gap-4">
+                    <button class="flex-1 h-12 border-2 border-[#e5e1dc] dark:border-[#3d3429] rounded-xl flex items-center justify-center gap-2 hover:border-primary transition-colors">
+                        <span class="text-2xl">📱</span>
+                        <span class="font-semibold text-[#181511] dark:text-white">Phone</span>
+                    </button>
+                    <button class="flex-1 h-12 border-2 border-[#e5e1dc] dark:border-[#3d3429] rounded-xl flex items-center justify-center gap-2 hover:border-primary transition-colors">
+                        <span class="text-2xl">🔐</span>
+                        <span class="font-semibold text-[#181511] dark:text-white">OTP</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Sign Up Form (Hidden by default) -->
+            <div id="signupForm" class="flex flex-col gap-6 hidden">
+                <div>
+                    <label class="text-[#181511] dark:text-white text-sm font-semibold mb-2 block">Full Name</label>
+                    <input type="text" id="signupName" placeholder="Enter your full name" class="w-full h-14 px-4 rounded-xl border-2 border-[#e5e1dc] dark:border-[#3d3429] bg-white dark:bg-[#2d2419] text-[#181511] dark:text-white text-base focus:border-primary focus:outline-none transition-colors" />
+                </div>
+
+                <div>
+                    <label class="text-[#181511] dark:text-white text-sm font-semibold mb-2 block">Phone Number</label>
+                    <input type="tel" id="signupPhone" placeholder="+91 XXXXX XXXXX" class="w-full h-14 px-4 rounded-xl border-2 border-[#e5e1dc] dark:border-[#3d3429] bg-white dark:bg-[#2d2419] text-[#181511] dark:text-white text-base focus:border-primary focus:outline-none transition-colors" />
+                </div>
+
+                <div>
+                    <label class="text-[#181511] dark:text-white text-sm font-semibold mb-2 block">Email (Optional)</label>
+                    <input type="email" id="signupEmail" placeholder="your.email@example.com" class="w-full h-14 px-4 rounded-xl border-2 border-[#e5e1dc] dark:border-[#3d3429] bg-white dark:bg-[#2d2419] text-[#181511] dark:text-white text-base focus:border-primary focus:outline-none transition-colors" />
+                </div>
+
+                <div>
+                    <label class="text-[#181511] dark:text-white text-sm font-semibold mb-2 block">Create Password</label>
+                    <div class="relative">
+                        <input type="password" id="signupPassword" placeholder="Create a strong password" class="w-full h-14 px-4 pr-12 rounded-xl border-2 border-[#e5e1dc] dark:border-[#3d3429] bg-white dark:bg-[#2d2419] text-[#181511] dark:text-white text-base focus:border-primary focus:outline-none transition-colors" />
+                        <button type="button" onclick="togglePassword('signupPassword')" class="absolute right-4 top-1/2 -translate-y-1/2 text-[#887863] dark:text-[#a19281]">
+                            <span class="material-symbols-outlined">visibility</span>
+                        </button>
+                    </div>
+                    <p class="text-xs text-[#887863] dark:text-[#a19281] mt-2">Min. 8 characters with letters and numbers</p>
+                </div>
+
+                <div>
+                    <label class="text-[#181511] dark:text-white text-sm font-semibold mb-2 block">Confirm Password</label>
+                    <div class="relative">
+                        <input type="password" id="signupConfirmPassword" placeholder="Re-enter your password" class="w-full h-14 px-4 pr-12 rounded-xl border-2 border-[#e5e1dc] dark:border-[#3d3429] bg-white dark:bg-[#2d2419] text-[#181511] dark:text-white text-base focus:border-primary focus:outline-none transition-colors" />
+                        <button type="button" onclick="togglePassword('signupConfirmPassword')" class="absolute right-4 top-1/2 -translate-y-1/2 text-[#887863] dark:text-[#a19281]">
+                            <span class="material-symbols-outlined">visibility</span>
+                        </button>
+                    </div>
+                </div>
+
+                <label class="flex items-start gap-3 cursor-pointer">
+                    <input type="checkbox" id="termsCheckbox" class="w-5 h-5 rounded border-2 border-[#e5e1dc] text-primary focus:ring-0 focus:ring-offset-0 mt-0.5" />
+                    <span class="text-sm text-[#887863] dark:text-[#a19281]">I agree to the Terms & Conditions and Privacy Policy</span>
+                </label>
+
+                <button onclick="handleSignup()" class="w-full h-14 bg-primary hover:bg-primary/90 text-[#181511] text-lg font-bold rounded-xl shadow-lg active:scale-95 transition-transform mt-2">
+                    Create Account
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Theme Toggle -->
+    <div class="fixed bottom-4 right-4 z-50">
+        <button class="p-3 bg-white dark:bg-[#352a1d] rounded-full shadow-md border border-primary/20 text-primary flex items-center justify-center" onclick="document.documentElement.classList.toggle('dark')">
+            <span class="material-symbols-outlined">dark_mode</span>
+        </button>
+    </div>
+
+    <script>
+        function switchToLogin() {
+            document.getElementById('loginForm').classList.remove('hidden');
+            document.getElementById('signupForm').classList.add('hidden');
+            document.getElementById('loginTab').classList.add('bg-primary', 'text-[#181511]');
+            document.getElementById('loginTab').classList.remove('text-[#887863]');
+            document.getElementById('signupTab').classList.remove('bg-primary', 'text-[#181511]');
+            document.getElementById('signupTab').classList.add('text-[#887863]');
+        }
+
+        function switchToSignup() {
+            document.getElementById('loginForm').classList.add('hidden');
+            document.getElementById('signupForm').classList.remove('hidden');
+            document.getElementById('signupTab').classList.add('bg-primary', 'text-[#181511]');
+            document.getElementById('signupTab').classList.remove('text-[#887863]');
+            document.getElementById('loginTab').classList.remove('bg-primary', 'text-[#181511]');
+            document.getElementById('loginTab').classList.add('text-[#887863]');
+        }
+
+        function togglePassword(inputId) {
+            const input = document.getElementById(inputId);
+            const button = input.nextElementSibling.querySelector('.material-symbols-outlined');
+            if (input.type === 'password') {
+                input.type = 'text';
+                button.textContent = 'visibility_off';
+            } else {
+                input.type = 'password';
+                button.textContent = 'visibility';
+            }
+        }
+
+        function handleLogin() {
+            const username = document.getElementById('loginUsername').value;
+            const password = document.getElementById('loginPassword').value;
+
+            if (!username || !password) {
+                alert('Please fill all fields');
+                return;
+            }
+
+            // Simulate login - in real app, this would call an API
+            localStorage.setItem('dekhbhal_user', JSON.stringify({
+                username: username,
+                loggedIn: true,
+                timestamp: new Date().getTime()
+            }));
+
+            // Redirect to dashboard
+            window.location.href = '../aaj_ka_din/code.html';
+        }
+
+        function handleSignup() {
+            const name = document.getElementById('signupName').value;
+            const phone = document.getElementById('signupPhone').value;
+            const email = document.getElementById('signupEmail').value;
+            const password = document.getElementById('signupPassword').value;
+            const confirmPassword = document.getElementById('signupConfirmPassword').value;
+            const termsAccepted = document.getElementById('termsCheckbox').checked;
+
+            if (!name || !phone || !password || !confirmPassword) {
+                alert('कृपया सभी आवश्यक फ़ील्ड भरें / Please fill all required fields');
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                alert('पासवर्ड मेल नहीं खाते / Passwords do not match');
+                return;
+            }
+
+            if (password.length < 8) {
+                alert('पासवर्ड कम से कम 8 अक्षरों का होना चाहिए / Password must be at least 8 characters');
+                return;
+            }
+
+            if (!termsAccepted) {
+                alert('कृपया नियम और शर्तों को स्वीकार करें / Please accept Terms & Conditions');
+                return;
+            }
+
+            // Simulate signup - in real app, this would call an API
+            localStorage.setItem('dekhbhal_user', JSON.stringify({
+                name: name,
+                phone: phone,
+                email: email,
+                loggedIn: true,
+                timestamp: new Date().getTime()
+            }));
+
+            // New user goes through onboarding
+            window.location.href = '../bhasha_chunein/code.html';
+        }
+
+        // Check if already logged in
+        window.onload = function() {
+            const user = localStorage.getItem('dekhbhal_user');
+            if (user) {
+                const userData = JSON.parse(user);
+                // Check if login is still valid (within 7 days)
+                const daysSinceLogin = (new Date().getTime() - userData.timestamp) / (1000 * 60 * 60 * 24);
+                if (daysSinceLogin < 7) {
+                    // Already logged in, redirect to dashboard
+                    window.location.href = '../aaj_ka_din/code.html';
+                }
+            }
+        };
+    </script>
+</body>
+</html>

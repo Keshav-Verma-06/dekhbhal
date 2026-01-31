@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Meri Diary - Side-Effect Notes</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e89c30",
+                        "background-light": "#fcfaf7",
+                        "background-dark": "#211a11",
+                        "paper-line": "#e5e1da",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .notebook-lines {
+            background-image: linear-gradient(#e5e1da 1px, transparent 1px);
+            background-size: 100% 48px;
+        }
+        .ios-shadow {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#181511] dark:text-[#f8f7f6] overflow-y-auto">
+<div class="relative flex h-screen w-full flex-col overflow-hidden max-w-[430px] mx-auto bg-white dark:bg-[#1c160e] overflow-y-auto">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-20 flex items-center bg-white/95 dark:bg-[#1c160e]/95 backdrop-blur-md px-4 py-3 border-b border-[#f4f3f0] dark:border-[#2d2419]">
+<div onclick="window.location.href='../aaj_ka_din/code.html'" class="flex items-center justify-center rounded-full hover:bg-[#f4f3f0] dark:hover:bg-[#2d2419] h-10 w-10 cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-[#181511] dark:text-white">arrow_back_ios_new</span>
+</div>
+<h2 class="flex-1 text-center text-[#181511] dark:text-white text-xl font-bold leading-tight tracking-tight pr-10">My Diary</h2>
+</header>
+<!-- Journal Content Area -->
+<main class="flex-1 overflow-y-auto notebook-lines">
+<!-- Welcome/Instructional Banner -->
+<div class="px-6 py-8 bg-primary/5 dark:bg-primary/10">
+<h1 class="text-2xl font-bold text-[#181511] dark:text-white mb-2">Hello, Grandpa</h1>
+<p class="text-[#887863] dark:text-[#b0a08a] text-base">How are you feeling today? Write everything here.</p>
+</div>
+<!-- SectionHeader: Today -->
+<div class="sticky top-0 bg-white/90 dark:bg-[#1c160e]/90 backdrop-blur-sm z-10 px-4 pt-6 pb-2">
+<h3 class="text-primary text-sm font-bold uppercase tracking-widest">Today, 24th Oct</h3>
+</div>
+<!-- ListItems: Today's Entries -->
+<div class="space-y-1">
+<div class="flex items-start gap-4 bg-white dark:bg-[#1c160e] px-4 py-4 min-h-[80px] border-b border-[#f4f3f0] dark:border-[#2d2419] active:bg-[#fcfaf7] transition-colors">
+<div class="flex items-center justify-center rounded-xl bg-orange-50 dark:bg-orange-900/20 shrink-0 size-14 ios-shadow">
+<span class="material-symbols-outlined text-primary text-3xl">sentiment_neutral</span>
+</div>
+<div class="flex flex-col justify-center flex-1">
+<p class="text-[#181511] dark:text-white text-lg font-medium leading-snug">Felt a bit dizzy</p>
+<p class="text-[#887863] dark:text-[#b0a08a] text-sm mt-1">10:30 AM • After morning tea</p>
+</div>
+</div>
+<div class="flex items-start gap-4 bg-white dark:bg-[#1c160e] px-4 py-4 min-h-[80px] border-b border-[#f4f3f0] dark:border-[#2d2419] active:bg-[#fcfaf7] transition-colors">
+<div class="flex items-center justify-center rounded-xl bg-blue-50 dark:bg-blue-900/20 shrink-0 size-14 ios-shadow">
+<span class="material-symbols-outlined text-blue-500 text-3xl">medication</span>
+</div>
+<div class="flex flex-col justify-center flex-1">
+<p class="text-[#181511] dark:text-white text-lg font-medium leading-snug">Took BP medicine</p>
+<p class="text-[#887863] dark:text-[#b0a08a] text-sm mt-1">08:00 AM</p>
+</div>
+</div>
+</div>
+<!-- SectionHeader: Yesterday -->
+<div class="sticky top-0 bg-white/90 dark:bg-[#1c160e]/90 backdrop-blur-sm z-10 px-4 pt-10 pb-2">
+<h3 class="text-[#887863] dark:text-[#b0a08a] text-sm font-bold uppercase tracking-widest">Yesterday, 23rd Oct</h3>
+</div>
+<!-- ListItems: Yesterday's Entries -->
+<div class="space-y-1">
+<div class="flex items-start gap-4 bg-white dark:bg-[#1c160e] px-4 py-4 min-h-[80px] border-b border-[#f4f3f0] dark:border-[#2d2419] active:bg-[#fcfaf7] transition-colors">
+<div class="flex items-center justify-center rounded-xl bg-purple-50 dark:bg-purple-900/20 shrink-0 size-14 ios-shadow">
+<span class="material-symbols-outlined text-purple-500 text-3xl">bedtime</span>
+</div>
+<div class="flex flex-col justify-center flex-1">
+<p class="text-[#181511] dark:text-white text-lg font-medium leading-snug">Felt lethargic after taking medicine</p>
+<p class="text-[#887863] dark:text-[#b0a08a] text-sm mt-1">08:15 PM</p>
+</div>
+</div>
+<div class="flex items-start gap-4 bg-white dark:bg-[#1c160e] px-4 py-4 min-h-[80px] border-b border-[#f4f3f0] dark:border-[#2d2419] active:bg-[#fcfaf7] transition-colors">
+<div class="flex items-center justify-center rounded-xl bg-red-50 dark:bg-red-900/20 shrink-0 size-14 ios-shadow">
+<span class="material-symbols-outlined text-red-500 text-3xl">thermostat</span>
+</div>
+<div class="flex flex-col justify-center flex-1">
+<p class="text-[#181511] dark:text-white text-lg font-medium leading-snug">Slight headache since morning</p>
+<p class="text-[#887863] dark:text-[#b0a08a] text-sm mt-1">09:00 AM</p>
+</div>
+</div>
+</div>
+<!-- Extra padding for FAB -->
+<div class="h-32"></div>
+</main>
+<!-- Navigation / FAB Overlay -->
+<div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-4 z-30">
+<!-- Voice Button -->
+<button class="flex h-14 w-14 items-center justify-center rounded-full bg-white dark:bg-[#2d2419] shadow-xl text-primary border border-primary/20">
+<span class="material-symbols-outlined text-3xl">mic</span>
+</button>
+<!-- Main Add Button -->
+<button class="flex h-16 px-8 items-center justify-center gap-3 rounded-full bg-primary shadow-2xl text-white hover:scale-105 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-3xl">edit</span>
+<span class="text-xl font-bold">New Note</span>
+</button>
+</div>
+<!-- IOS Indicator Bar -->
+<div class="h-1.5 w-32 bg-[#181511]/20 dark:bg-white/20 rounded-full mx-auto mb-2 absolute bottom-2 left-1/2 -translate-x-1/2"></div>
+</div>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 right-0 bg-white dark:bg-[#1c160e] border-t border-[#e5e1dc] dark:border-[#3d3429] z-50">
+<div class="max-w-md mx-auto flex justify-around items-center py-3 px-2">
+<a href="../aaj_ka_din/code.html" class="flex flex-col items-center justify-center w-16 h-16 text-[#887863] dark:text-[#a19281]">
+<span class="material-symbols-outlined text-2xl">home</span>
+<span class="text-xs font-medium mt-1">Home</span>
+</a>
+<a href="../meri_dawaiyan/code.html" class="flex flex-col items-center justify-center w-16 h-16 text-[#887863] dark:text-[#a19281]">
+<span class="material-symbols-outlined text-2xl">medication</span>
+<span class="text-xs font-medium mt-1">Medicine</span>
+</a>
+<a href="../aapki_pragati/code.html" class="flex flex-col items-center justify-center w-16 h-16 text-[#887863] dark:text-[#a19281]">
+<span class="material-symbols-outlined text-2xl">trending_up</span>
+<span class="text-xs font-medium mt-1">Progress</span>
+</a>
+<a href="code.html" class="flex flex-col items-center justify-center w-16 h-16 text-primary">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1">book</span>
+<span class="text-xs font-medium mt-1">Diary</span>
+</a>
+</div>
+</nav>
+</body></html>

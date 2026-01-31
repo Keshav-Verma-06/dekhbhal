@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dekhbhal - Welcome</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#e89c30",
+              "background-light": "#fdfaf5",
+              "background-dark": "#211a11",
+            },
+            fontFamily: {
+              "display": ["Lexend", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col transition-colors duration-300">
+<!-- Main Container -->
+<div class="relative flex h-full min-h-screen w-full flex-col group/design-root overflow-x-hidden max-w-[430px] mx-auto bg-background-light dark:bg-background-dark">
+<!-- Top Branding Space (iOS Status Bar Offset) -->
+<div class="h-12 w-full"></div>
+<!-- Hero Illustration Section -->
+<div class="px-4 flex-grow flex flex-col justify-center">
+<div class="@container">
+<div class="@[480px]:px-4">
+<div class="w-full bg-center bg-no-repeat bg-cover flex flex-col justify-end overflow-hidden rounded-xl min-h-[400px] shadow-sm" data-alt="Warm illustration of Indian grandparents playing with a grandchild in a garden" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDvqSf7iti-scdBmacMzprIVT67I1cHsDy-Pxfe_WTp2-vpIWzTFmDteRGqOhUMhPil4RlhBstJvPAYq0Z_NR2e9fVM6XkNkksYbGKVb3lpzhxPxkkXEPUE2dgYCqJJ64Jrsszz5g5LF6YFLn1_IImyCBexEihmh95c9A_CtRSe4Jzws0sxeQox-hntMYFJFfbZWqLVEj2kmuWcsSUh9_buUEoVz2LrU5PNPYmstV7xrIZu8hU5RdVASWwVvzmv1PBdwkaaZe896MKw");'>
+<!-- Soft gradient overlay to blend into the cream background if needed -->
+<div class="w-full h-24 bg-gradient-to-t from-background-light/40 to-transparent dark:from-background-dark/40"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Text Content Area -->
+<div class="px-6 pt-8 pb-4">
+<h1 class="text-[#181511] dark:text-white tracking-tight text-[40px] font-bold leading-tight text-center">
+                Dekhbhal
+            </h1>
+<p class="text-[#4b453d] dark:text-[#d1cbc3] text-lg font-normal leading-relaxed pt-2 px-2 text-center">
+                A caring space for you <br/>and your family.
+            </p>
+</div>
+<!-- Action Buttons Section -->
+<div class="pb-12 px-6">
+<div class="flex flex-col gap-4 max-w-full">
+<!-- Primary Action: Get Started -->
+<button onclick="window.location.href='../bhasha_chunein/code.html'" class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-[60px] px-5 bg-primary text-[#181511] text-lg font-bold leading-normal tracking-wide w-full shadow-lg active:scale-95 transition-transform">
+<span class="truncate">Get Started</span>
+</button>
+<!-- Secondary Action: Login -->
+<button onclick="window.location.href='../aaj_ka_din/code.html'" class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-[60px] px-5 bg-primary/10 dark:bg-primary/20 text-[#181511] dark:text-white text-lg font-bold leading-normal tracking-wide w-full active:bg-primary/20 transition-colors">
+<span class="truncate">Login</span>
+</button>
+</div>
+</div>
+<!-- iOS Home Indicator Spacing -->
+<div class="h-8 w-full"></div>
+</div>
+<!-- Theme Toggle (Floating for Demo) -->
+<div class="fixed bottom-4 right-4 z-50">
+<button class="p-3 bg-white dark:bg-[#352a1d] rounded-full shadow-md border border-primary/20 text-primary flex items-center justify-center" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-symbols-outlined">dark_mode</span>
+</button>
+</div>
+</body></html>

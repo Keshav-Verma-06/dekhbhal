@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html class="light" lang="hi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Savan se Miliye - DEKHBHAL</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e89c30",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#211a11",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+        .glow-ring {
+            box-shadow: 0 0 20px 5px rgba(232, 156, 48, 0.3);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#181511] dark:text-white transition-colors duration-300">
+<!-- Root Container -->
+<div class="relative flex h-screen w-full flex-col overflow-x-hidden">
+<!-- TopAppBar -->
+<div class="flex items-center bg-transparent p-4 pb-2 justify-between shrink-0">
+<div onclick="window.location.href='../pehchaan_chunein/code.html'" aria-label="Go back" class="text-[#181511] dark:text-white flex size-12 shrink-0 items-center cursor-pointer">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</div>
+<h2 class="text-[#181511] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-12">Meet Savan</h2>
+</div>
+<!-- Main Content Area: Centered Content -->
+<div class="flex flex-1 flex-col items-center justify-center px-6 gap-10">
+<!-- AvatarGroup / Central Character -->
+<div class="relative">
+<!-- Glowing effect backdrop -->
+<div class="absolute inset-0 rounded-full bg-primary/20 scale-125 blur-2xl"></div>
+<div class="relative flex items-center justify-center p-4">
+<div class="overflow-visible">
+<!-- Large Central Avatar with Gold Border -->
+<div class="bg-center bg-no-repeat aspect-square bg-cover border-primary bg-[#f4f3f0] rounded-full flex items-center justify-center w-48 h-48 border-8 glow-ring" data-alt="Illustration of a friendly male healthcare companion character" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDc0KbpJ-ins8H4Y8neLFN98qOgpBabcPhH_CNgeAb8TXicKJuXSvxK3J5f5K7dLEyYL0tDWWwulVW0_thrI9hZoD_rnYgFLHDKoHnSvnuhkcBjv280aekeRMFibTyKD9tGauUMFqG2jg1yQKTK174Ejc_qzZCnMmc7NzdNCqAEraUNyIEUUxbtZX5nsyg3PVhado-4jVhoTuc7zHwbpUuM2UdRLnHskm9osG8g0SU1T9UUd38OpEoiGB5uxIkvNZsSSpZivNg2qN2P");'>
+</div>
+</div>
+</div>
+</div>
+<!-- SingleMessage / Introduction Bubble -->
+<div class="flex flex-col items-center gap-4 w-full max-w-sm">
+<div class="flex flex-col gap-1 items-center">
+<!-- Name Label -->
+<p class="text-primary text-[15px] font-semibold uppercase tracking-wider">Savan</p>
+<!-- Chat Bubble -->
+<div class="relative mt-2">
+<p class="text-xl font-medium leading-relaxed text-center rounded-2xl px-8 py-5 bg-white dark:bg-[#2d251a] text-[#181511] dark:text-white shadow-sm border border-black/5 dark:border-white/10">
+                            Hello, I'm Savan. Your companion.
+                        </p>
+<!-- Speech bubble arrow pointing up -->
+<div class="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white dark:bg-[#2d251a] rotate-45 border-l border-t border-black/5 dark:border-white/10"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Section: Sticky Bottom -->
+<div class="p-6 bg-gradient-to-t from-background-light dark:from-background-dark to-transparent pt-10">
+<!-- MetaText Hint -->
+<p class="text-[#887863] dark:text-[#a89883] text-sm font-normal leading-normal pb-4 text-center">
+                Tap to hear a sample of my voice
+            </p>
+<!-- SingleButton / Test Voice -->
+<div class="flex flex-col gap-3">
+<button onclick="playSampleVoice()" class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl h-16 px-5 bg-primary text-white gap-3 transition-transform active:scale-95 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-2xl">volume_up</span>
+<span class="text-lg font-bold tracking-wide">Test Voice</span>
+</button>
+<!-- Secondary/Skip Action -->
+<button onclick="window.location.href='../aaj_ka_din/code.html'" class="flex w-full cursor-pointer items-center justify-center h-12 text-[#887863] dark:text-[#a89883] font-medium text-base">
+                    Continue to Dashboard
+                </button>
+</div>
+<script>
+function playSampleVoice() {
+    alert('Sample voice would play here. This is a demo.');
+}
+</script>
+<!-- Home Indicator (iOS style spacing) -->
+<div class="h-6"></div>
+</div>
+</div>
+</body></html>

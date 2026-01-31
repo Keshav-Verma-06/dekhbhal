@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html class="light" lang="hi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pehchaan Chunein - Dekhbhal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#e89c30",
+                        "background-light": "#fdfaf5",
+                        "background-dark": "#211a11",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col overflow-y-auto">
+<!-- Top Navigation Bar -->
+<div class="flex items-center bg-transparent p-4 pb-2 justify-between">
+<div onclick="window.location.href='../bhasha_chunein/code.html'" aria-label="Back" class="text-[#181511] dark:text-white flex size-12 shrink-0 items-center justify-center cursor-pointer">
+<span class="material-symbols-outlined">arrow_back_ios</span>
+</div>
+<h2 class="text-[#181511] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-12">Select Profile</h2>
+</div>
+<!-- Welcome Headline -->
+<div class="px-6 pt-8">
+<h1 class="text-[#181511] dark:text-white tracking-tight text-[32px] font-bold leading-tight text-center">
+            Welcome
+        </h1>
+<p class="text-[#887863] dark:text-[#a19281] text-lg font-normal leading-normal pt-2 text-center">
+            Tell us how we can better help you
+        </p>
+</div>
+<!-- Role Selection Cards Container -->
+<div class="flex-1 flex flex-col gap-6 p-6 mt-4">
+<!-- Patient Card -->
+<div class="group relative flex flex-col items-stretch justify-start rounded-xl shadow-[0_4px_20px_rgba(232,156,48,0.1)] bg-white dark:bg-[#2d2419] border-2 border-transparent hover:border-primary transition-all cursor-pointer">
+<div class="w-full bg-center bg-no-repeat aspect-[16/9] bg-cover rounded-t-xl" data-alt="Gentle illustration of a smiling elderly person with warm lighting" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD6mVyPP4rHEOL-J-kRDUTchocS9jAKuKu5fTsqofZBsBPrXjTjE4ADcHsazMLZXSDDzE7bYf0d2pdAy0OLcffkIn660vjqTgwnvAc_cmssA9UlARnEW6ZOgcDiTGv1YdsgJC0YRbqgNbmqJVS-v7gzC2OaTUIij-RPS4R_NXSh-qXntG1rJ_uUZY5c4ZspPO8HE7Q8Jl_RyKNTYldELme19I7yCnUzkwvnNIYCbcaiQ2i9Hmau1mDXDck4AFcFGS4tqOkNqD69K5qH");'>
+<div class="w-full h-full bg-gradient-to-t from-white/20 to-transparent"></div>
+</div>
+<div class="flex w-full min-w-72 grow flex-col items-stretch justify-center gap-1 py-6 px-6">
+<div class="flex items-center justify-between">
+<div>
+<p class="text-[#181511] dark:text-white text-2xl font-bold leading-tight tracking-[-0.015em]">
+                            Main Mareez Hoon
+                        </p>
+<p class="text-[#887863] dark:text-[#a19281] text-lg font-normal leading-normal">
+                            I am the patient
+                        </p>
+</div>
+<div class="bg-primary/10 p-3 rounded-full text-primary">
+<span class="material-symbols-outlined text-3xl">elderly</span>
+</div>
+</div>
+<button onclick="window.location.href='../savan_se_miliye/code.html'" class="mt-4 flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-4 bg-primary text-white text-base font-semibold leading-normal active:scale-95 transition-transform">
+<span class="truncate">Select Profile</span>
+</button>
+</div>
+</div>
+<!-- Caretaker Card -->
+<div class="group relative flex flex-col items-stretch justify-start rounded-xl shadow-[0_4px_20px_rgba(232,156,48,0.1)] bg-white dark:bg-[#2d2419] border-2 border-transparent hover:border-primary transition-all cursor-pointer">
+<div class="w-full bg-center bg-no-repeat aspect-[16/9] bg-cover rounded-t-xl" data-alt="Close-up of a caregiver holding an elderly person's hand with care" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCrmIk8yX35ksK9IjYtYAESDLP9LsifoVIhE1nYES5OT2FShwnVEGFTQAw5fSZrfwX94Lbc-IXNf18ZFhEVjhYTEwujMZF9B16bnNf0wtexAYJ5DMHnzcGTyr0DU3fG0Bfv4D9xnqG2ywKhBsOS24uwRV79WASSEenaZwCbu-azAxXTpPZfGKU3GkJYPq05kWGhDgVmvXF662lU-2GE-Dn2WSL4V0PqNTSrvGO3S-pz1xoPim8JYN9C63rcMrZdK88MDNOF8I4UYWz1");'>
+<div class="w-full h-full bg-gradient-to-t from-white/20 to-transparent"></div>
+</div>
+<div class="flex w-full min-w-72 grow flex-col items-stretch justify-center gap-1 py-6 px-6">
+<div class="flex items-center justify-between">
+<div>
+<p class="text-[#181511] dark:text-white text-2xl font-bold leading-tight tracking-[-0.015em]">
+                            Main Dekhbhal Kar Raha Hoon
+                        </p>
+<p class="text-[#887863] dark:text-[#a19281] text-lg font-normal leading-normal">
+                            I am the caretaker
+                        </p>
+</div>
+<div class="bg-primary/10 p-3 rounded-full text-primary">
+<span class="material-symbols-outlined text-3xl">volunteer_activism</span>
+</div>
+</div>
+<button onclick="window.location.href='../savan_se_miliye/code.html'" class="mt-4 flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-4 bg-primary text-white text-base font-semibold leading-normal active:scale-95 transition-transform">
+<span class="truncate">Select Profile</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Bottom Spacing for iOS Home Indicator -->
+<div class="h-8 bg-transparent"></div>
+</body></html>

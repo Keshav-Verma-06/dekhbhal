@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html class="light" lang="hi">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Aaj ka Din - Dekhbhal</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#e89c30",
+            "background-light": "#f8f7f6",
+            "background-dark": "#211a11",
+          },
+          fontFamily: {
+            "display": ["Lexend", "sans-serif"]
+          },
+          borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    body {
+      font-family: 'Lexend', sans-serif;
+    }
+  </style>
+  <style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark min-h-screen text-[#181511] dark:text-white overflow-y-auto">
+  <!-- Top Navigation -->
+  <div class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+    <div class="flex items-center p-4 justify-between max-w-md mx-auto">
+      <div class="flex size-10 shrink-0 items-center justify-center bg-primary/20 rounded-full">
+        <span class="material-symbols-outlined text-primary">menu</span>
+      </div>
+      <h2 class="text-[#181511] dark:text-white text-xl font-bold leading-tight tracking-tight flex-1 text-center">Today's Schedule</h2>
+      <div class="flex size-10 items-center justify-end">
+        <button
+          class="relative flex items-center justify-center rounded-full size-10 bg-transparent text-[#181511] dark:text-white">
+          <span class="material-symbols-outlined">notifications</span>
+          <span class="absolute top-2 right-2 size-2 bg-red-500 rounded-full"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <main class="max-w-md mx-auto pb-24 relative min-h-screen">
+    <!-- VIEW: HOME (Original Content) -->
+    <div id="view-home" class="page-view transition-opacity duration-300 ease-in-out">
+      <!-- Profile & Greeting -->
+      <div class="p-6">
+        <div class="flex items-center gap-5">
+          <div class="relative">
+            <div
+              class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-20 border-4 border-white dark:border-gray-800 shadow-lg"
+              data-alt="Portrait of a smiling elderly person"
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDJLiVlSTcX9nyNrVy1bglcPGCP4lIiaCeVLjRE47rayUTmE6CW8T0WiGZ9QddnJS6IGe_M8eeBXcSr4WuwiWF20Zj-5I-x9f8l0gR-3od5nk0nvaLlYS4_yEJsPJxgeyP2K4zUsMOR6M0mpwtvcLoXZD4nxrgz8sgNLeC0kPz9bfjVWw4I2lCAuCAdHoi9YNvcNV1JPCJfyu_MEyBKrl6QUQ6fqnaCb-8RrMEJPX_g05EcXPTJfQbibgtldQE3aHXk3M1Z_oDZpmaW");'>
+            </div>
+            <div
+              class="absolute -bottom-1 -right-1 bg-green-500 size-5 rounded-full border-2 border-white dark:border-gray-800">
+            </div>
+          </div>
+          <div class="flex flex-col">
+            <h1 class="text-[#181511] dark:text-white text-2xl font-bold leading-tight">Hello, Grandpa</h1>
+            <p class="text-[#887863] dark:text-gray-400 text-base font-normal">Good morning! Have a great day.</p>
+          </div>
+        </div>
+        <div class="mt-4 inline-flex items-center gap-2 bg-primary/10 dark:bg-primary/20 px-4 py-1.5 rounded-full">
+          <span class="material-symbols-outlined text-primary text-sm">calendar_today</span>
+          <span class="text-primary text-sm font-semibold uppercase tracking-wider">Monday, 23 October</span>
+        </div>
+      </div>
+
+      <!-- Section Header -->
+      <div class="px-6 py-2">
+        <h3 class="text-[#181511] dark:text-white text-lg font-bold leading-tight">Your Daily Routine</h3>
+        <p class="text-[#887863] dark:text-gray-400 text-sm">Tasks scheduled by time</p>
+      </div>
+
+      <!-- Interactive Timeline -->
+      <div class="px-6 py-4">
+        <div class="grid grid-cols-[48px_1fr] gap-x-2">
+          <!-- 1. Subah chai ke baad -->
+          <div class="flex flex-col items-center">
+            <div
+              class="flex size-10 items-center justify-center rounded-full bg-primary/20 dark:bg-primary/30 text-primary ring-4 ring-background-light dark:ring-background-dark">
+              <span class="material-symbols-outlined">coffee</span>
+            </div>
+            <div class="w-[3px] bg-gradient-to-b from-primary/30 to-primary h-20 grow my-1 rounded-full"></div>
+          </div>
+          <div class="flex flex-col pb-8">
+            <div class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm border border-primary/20">
+              <div class="flex justify-between items-start mb-2">
+                <div>
+                  <p class="text-primary text-xs font-bold uppercase tracking-widest mb-1">Completed</p>
+                  <p class="text-[#181511] dark:text-white text-lg font-bold">After Morning Tea</p>
+                </div>
+                <span class="material-symbols-outlined text-green-500">check_circle</span>
+              </div>
+              <p class="text-[#887863] dark:text-gray-400 text-sm">Yoga and light sitting</p>
+            </div>
+          </div>
+
+          <!-- 2. Dopahar ke baad (Current) -->
+          <div class="flex flex-col items-center">
+            <div
+              class="flex size-12 items-center justify-center rounded-full bg-primary text-white shadow-lg shadow-primary/40 animate-pulse z-10">
+              <span class="material-symbols-outlined">light_mode</span>
+            </div>
+            <div class="w-[3px] bg-primary h-24 grow my-1 rounded-full opacity-30"></div>
+          </div>
+          <div class="flex flex-col pb-8">
+            <div
+              class="bg-white dark:bg-gray-800 p-5 rounded-xl shadow-xl border-2 border-primary ring-4 ring-primary/5">
+              <div class="flex justify-between items-start mb-3">
+                <div class="flex flex-col gap-1">
+                  <p class="text-primary text-xs font-bold uppercase tracking-widest">Current Time</p>
+                  <p class="text-[#181511] dark:text-white text-xl font-bold">After Lunch</p>
+                  <p class="text-[#887863] dark:text-gray-400 text-sm">Medicine and some rest</p>
+                </div>
+              </div>
+              <!-- Task Card Inside -->
+              <div
+                class="mt-4 p-4 bg-background-light dark:bg-gray-900 rounded-lg flex items-center justify-between border border-gray-100 dark:border-gray-700">
+                <div class="flex items-center gap-3">
+                  <div class="size-12 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-blue-600 dark:text-blue-400">medication</span>
+                  </div>
+                  <div>
+                    <p class="text-[#181511] dark:text-white font-bold text-sm">Blue Pill</p>
+                    <p class="text-[#887863] dark:text-gray-400 text-xs">20 min after meal</p>
+                  </div>
+                </div>
+                <button
+                  class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg text-sm font-bold transition-colors flex items-center gap-2">
+                  <span class="material-symbols-outlined text-sm">check</span>
+                  Taken
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Shaam ki chai ke baad -->
+          <div class="flex flex-col items-center">
+            <div
+              class="flex size-10 items-center justify-center rounded-full bg-gray-200 dark:bg-gray-700 text-gray-500">
+              <span class="material-symbols-outlined">wb_twilight</span>
+            </div>
+            <div class="w-[3px] bg-gray-200 dark:bg-gray-700 h-20 grow my-1 rounded-full"></div>
+          </div>
+          <div class="flex flex-col pb-8">
+            <div class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm border border-transparent opacity-60">
+              <p class="text-gray-400 text-xs font-bold uppercase tracking-widest mb-1">Next</p>
+              <p class="text-[#181511] dark:text-white text-lg font-bold">After Evening Tea</p>
+              <p class="text-[#887863] dark:text-gray-400 text-sm">Park walk and chat with friends</p>
+            </div>
+          </div>
+
+          <!-- 4. Raat ke baad -->
+          <div class="flex flex-col items-center">
+            <div
+              class="flex size-10 items-center justify-center rounded-full bg-gray-200 dark:bg-gray-700 text-gray-500">
+              <span class="material-symbols-outlined">dark_mode</span>
+            </div>
+          </div>
+          <div class="flex flex-col">
+            <div class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm border border-transparent opacity-60">
+              <p class="text-gray-400 text-xs font-bold uppercase tracking-widest mb-1">Before Bed</p>
+              <p class="text-[#181511] dark:text-white text-lg font-bold">After Dinner</p>
+              <p class="text-[#887863] dark:text-gray-400 text-sm">Light medicine and sleep</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Caregiver Note -->
+      <div class="px-6 mt-4">
+        <div class="bg-primary/5 dark:bg-primary/10 p-4 rounded-xl border-l-4 border-primary flex items-start gap-4">
+          <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12 shrink-0 border-2 border-white"
+            data-alt="Caregiver smiling headshot"
+            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD6Mdm_HZ1aaDeelKEw7JpMU7W9Ov7vAwmwQ5nBFxlUgw7xQCR6qq8QIKOUo31Fg-2O42uPbqSCWNHIJfE_AQ17U-I7EWrGNUc0DcncQNkcsSVtdGTfEKCrkRRBm82vGeywU1mBVQ6L6a4vmaxgIZODBgTqvwlonL2NWT3jlzmAQblL4Ko-LfPRwZYWWFuNqPak5WxU_ZOepk40p9GhhcFbyOfKRJwiUDj9eOk6-d-fawFf7MES0plHW8j8Gpgl9U8IDNMl_fYecP32");'>
+          </div>
+          <div class="flex flex-col">
+            <p class="text-[#181511] dark:text-white text-sm font-bold">Sneha (Caregiver)</p>
+            <p class="text-[#887863] dark:text-gray-400 text-sm italic">"Grandpa, I've kept your food in the fridge. Let's video call in the evening!"</p>
+            <p class="text-primary text-[10px] font-bold mt-1">15 MINS AGO</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VIEW: HEALTH (New) -->
+    <div id="view-health" class="page-view hidden transition-opacity duration-300 ease-in-out">
+      <div class="p-6">
+        <h2 class="text-[#181511] dark:text-white text-2xl font-bold mb-6">Your Health</h2>
+
+        <!-- Vitals Grid -->
+        <div class="grid grid-cols-2 gap-4 mb-6">
+          <div
+            class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 flex flex-col items-center text-center">
+            <div class="bg-red-50 dark:bg-red-900/20 p-2 rounded-full mb-2">
+              <span class="material-symbols-outlined text-red-500">favorite</span>
+            </div>
+            <span class="text-2xl font-bold text-[#181511] dark:text-white">72</span>
+            <span class="text-xs text-gray-500 font-medium">Beats / Min</span>
+          </div>
+
+          <div
+            class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 flex flex-col items-center text-center">
+            <div class="bg-blue-50 dark:bg-blue-900/20 p-2 rounded-full mb-2">
+              <span class="material-symbols-outlined text-blue-500">water_drop</span>
+            </div>
+            <span class="text-2xl font-bold text-[#181511] dark:text-white">96%</span>
+            <span class="text-xs text-gray-500 font-medium">Oxygen</span>
+          </div>
+        </div>
+
+        <!-- Weekly Graph Placeholder -->
+        <div
+          class="bg-white dark:bg-gray-800 p-5 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 mb-6">
+          <div class="flex justify-between items-center mb-4">
+            <h3 class="font-bold text-[#181511] dark:text-white">Blood Pressure</h3>
+            <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full font-bold">Normal</span>
+          </div>
+          <div class="flex items-end justify-between h-32 gap-2">
+            <div class="w-full bg-primary/20 rounded-t-lg h-[40%]"></div>
+            <div class="w-full bg-primary/20 rounded-t-lg h-[60%]"></div>
+            <div class="w-full bg-primary/20 rounded-t-lg h-[50%]"></div>
+            <div class="w-full bg-primary rounded-t-lg h-[75%] shadow-lg shadow-primary/20"></div>
+            <div class="w-full bg-primary/20 rounded-t-lg h-[65%]"></div>
+            <div class="w-full bg-primary/20 rounded-t-lg h-[55%]"></div>
+            <div class="w-full bg-primary/20 rounded-t-lg h-[45%]"></div>
+          </div>
+          <div class="flex justify-between mt-2 text-xs text-gray-400">
+            <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VIEW: CHAT (Baatein) -->
+    <div id="view-chat" class="page-view hidden transition-opacity duration-300 ease-in-out">
+      <div class="flex flex-col h-full pt-6">
+        <div class="px-6 mb-4">
+          <h2 class="text-[#181511] dark:text-white text-2xl font-bold">Baatein</h2>
+          <p class="text-gray-500 text-sm">Parivaar aur doston ke saath</p>
+        </div>
+
+        <!-- Chat List -->
+        <div class="flex-1 overflow-y-auto px-4 pb-24 space-y-3">
+          <!-- Sneha (Caregiver) -->
+          <div
+            class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm border border-primary/20 flex gap-4 items-center">
+            <div class="relative">
+              <div class="size-12 rounded-full bg-cover bg-center border-2 border-white"
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD6Mdm_HZ1aaDeelKEw7JpMU7W9Ov7vAwmwQ5nBFxlUgw7xQCR6qq8QIKOUo31Fg-2O42uPbqSCWNHIJfE_AQ17U-I7EWrGNUc0DcncQNkcsSVtdGTfEKCrkRRBm82vGeywU1mBVQ6L6a4vmaxgIZODBgTqvwlonL2NWT3jlzmAQblL4Ko-LfPRwZYWWFuNqPak5WxU_ZOepk40p9GhhcFbyOfKRJwiUDj9eOk6-d-fawFf7MES0plHW8j8Gpgl9U8IDNMl_fYecP32");'>
+              </div>
+              <div class="absolute bottom-0 right-0 size-3 bg-green-500 rounded-full border border-white"></div>
+            </div>
+            <div class="flex-1">
+              <div class="flex justify-between items-center mb-1">
+                <h3 class="font-bold text-[#181511] dark:text-white">Sneha (Caregiver)</h3>
+                <span class="text-[10px] text-gray-400">12:30 PM</span>
+              </div>
+              <p class="text-sm text-gray-500 line-clamp-1">Kept your food in fridge, take your medicine...</p>
+            </div>
+          </div>
+
+          <!-- Rahul (Grandson) -->
+          <div
+            class="bg-white dark:bg-gray-800 p-4 rounded-xl shadow-sm border border-transparent flex gap-4 items-center opacity-80">
+            <div class="relative">
+              <div
+                class="size-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-xl">
+                R</div>
+            </div>
+            <div class="flex-1">
+              <div class="flex justify-between items-center mb-1">
+                <h3 class="font-bold text-[#181511] dark:text-white">Rahul (Grandson)</h3>
+                <span class="text-[10px] text-gray-400">Yesterday</span>
+              </div>
+              <p class="text-sm text-gray-500 line-clamp-1">Grandpa, cricket match on Sunday!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VIEW: PROFILE -->
+    <div id="view-profile" class="page-view hidden transition-opacity duration-300 ease-in-out">
+      <div class="p-6">
+        <div class="flex flex-col items-center mb-8">
+          <div class="size-24 rounded-full bg-cover bg-center border-4 border-white shadow-lg mb-4"
+            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDJLiVlSTcX9nyNrVy1bglcPGCP4lIiaCeVLjRE47rayUTmE6CW8T0WiGZ9QddnJS6IGe_M8eeBXcSr4WuwiWF20Zj-5I-x9f8l0gR-3od5nk0nvaLlYS4_yEJsPJxgeyP2K4zUsMOR6M0mpwtvcLoXZD4nxrgz8sgNLeC0kPz9bfjVWw4I2lCAuCAdHoi9YNvcNV1JPCJfyu_MEyBKrl6QUQ6fqnaCb-8RrMEJPX_g05EcXPTJfQbibgtldQE3aHXk3M1Z_oDZpmaW");'>
+          </div>
+          <h2 class="text-2xl font-bold text-[#181511] dark:text-white">Ramesh Kumar</h2>
+          <p class="text-primary font-medium">Age: 78 Years</p>
+        </div>
+
+        <div class="space-y-3">
+          <button class="w-full bg-white dark:bg-gray-800 p-4 rounded-xl flex items-center justify-between shadow-sm">
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-gray-500">settings</span>
+              <span class="font-bold text-[#181511] dark:text-white">Settings</span>
+            </div>
+            <span class="material-symbols-outlined text-gray-400">chevron_right</span>
+          </button>
+          <button class="w-full bg-white dark:bg-gray-800 p-4 rounded-xl flex items-center justify-between shadow-sm">
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-gray-500">emergency</span>
+              <span class="font-bold text-[#181511] dark:text-white">Emergency Contacts</span>
+            </div>
+            <span class="material-symbols-outlined text-gray-400">chevron_right</span>
+          </button>
+          <button class="w-full bg-white dark:bg-gray-800 p-4 rounded-xl flex items-center justify-between shadow-sm">
+            <div class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-gray-500">history</span>
+              <span class="font-bold text-[#181511] dark:text-white">Medical History</span>
+            </div>
+            <span class="material-symbols-outlined text-gray-400">chevron_right</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Bottom Action Bar (Simulated iOS Bottom Bar) -->
+  <div
+    class="fixed bottom-0 left-0 right-0 bg-white/90 dark:bg-gray-900/90 backdrop-blur-lg border-t border-gray-200 dark:border-gray-800 px-6 py-4 flex justify-around items-center z-50">
+    <button onclick="switchTab('home')" id="nav-home"
+      class="flex flex-col items-center gap-1 text-primary transition-colors cursor-pointer">
+      <span class="material-symbols-outlined text-2xl">home</span>
+      <span class="text-[10px] font-bold">Home</span>
+    </button>
+
+    <button onclick="window.location.href='../meri_dawaiyan/code.html'" id="nav-health"
+      class="flex flex-col items-center gap-1 text-gray-400 dark:text-gray-500 hover:text-primary transition-colors cursor-pointer">
+      <span class="material-symbols-outlined text-2xl">medication</span>
+      <span class="text-[10px] font-medium">Medicine</span>
+    </button>
+
+    <button onclick="window.location.href='../meri_diary/code.html'"
+      class="relative -top-8 size-14 bg-primary rounded-full shadow-lg shadow-primary/30 flex items-center justify-center border-4 border-background-light dark:border-background-dark active:scale-95 transition-transform cursor-pointer">
+      <span class="material-symbols-outlined text-white text-3xl">book</span>
+    </button>
+
+    <button onclick="window.location.href='../aapki_pragati/code.html'" id="nav-chat"
+      class="flex flex-col items-center gap-1 text-gray-400 dark:text-gray-500 hover:text-primary transition-colors cursor-pointer">
+      <span class="material-symbols-outlined text-2xl">trending_up</span>
+      <span class="text-[10px] font-medium">Progress</span>
+    </button>
+
+    <button onclick="switchTab('profile')" id="nav-profile"
+      class="flex flex-col items-center gap-1 text-gray-400 dark:text-gray-500 hover:text-primary transition-colors cursor-pointer">
+      <span class="material-symbols-outlined text-2xl">person</span>
+      <span class="text-[10px] font-medium">Profile</span>
+    </button>
+  </div>
+
+  <script>
+    function switchTab(tabId) {
+      // 1. Hide all views
+      document.querySelectorAll('.page-view').forEach(el => {
+        el.classList.add('hidden');
+      });
+
+      // 2. Remove active styling from all nav items
+      document.querySelectorAll('[id^="nav-"]').forEach(el => {
+        el.classList.remove('text-primary');
+        el.classList.add('text-gray-400', 'dark:text-gray-500');
+        // Reset font weight
+        let textSpan = el.querySelector('span:last-child');
+        if (textSpan) {
+          textSpan.classList.remove('font-bold');
+          textSpan.classList.add('font-medium');
+        }
+      });
+
+      // 3. Show selected view
+      const targetView = document.getElementById('view-' + tabId);
+      if (targetView) {
+        targetView.classList.remove('hidden');
+      }
+
+      // 4. Highlight selected nav item
+      const activeNav = document.getElementById('nav-' + tabId);
+      if (activeNav) {
+        activeNav.classList.remove('text-gray-400', 'dark:text-gray-500');
+        activeNav.classList.add('text-primary');
+        // Bold font
+        let textSpan = activeNav.querySelector('span:last-child');
+        if (textSpan) {
+          textSpan.classList.add('font-bold');
+          textSpan.classList.remove('font-medium');
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>
