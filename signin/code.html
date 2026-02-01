@@ -250,20 +250,6 @@
             // New user goes through onboarding
             window.location.href = '../bhasha_chunein/code.html';
         }
-
-        // Check if already logged in
-        window.onload = function() {
-            const user = localStorage.getItem('dekhbhal_user');
-            if (user) {
-                const userData = JSON.parse(user);
-                // Check if login is still valid (within 7 days)
-                const daysSinceLogin = (new Date().getTime() - userData.timestamp) / (1000 * 60 * 60 * 24);
-                if (daysSinceLogin < 7) {
-                    // Already logged in, redirect to dashboard
-                    window.location.href = '../aaj_ka_din/code.html';
-                }
-            }
-        };
     </script>
 </body>
 </html>
